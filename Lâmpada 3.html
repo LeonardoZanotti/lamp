@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Lâmpada 3</title>
+	<meta charset="UTF-8"/>
+	<script>										<!-- Cria uma área para comandos de javascript -->
+	var quebrada = false							<!-- Quebrada off -->
+		function mudaLampada(tipo) {				<!-- Função com nome "mudaLampada" que quando chamado, execuda os códigos entre {} -->
+			if (!quebrada)  {						<!-- Se quebrada estiver off fazer o seguinte: -->
+				document.getElementById("luz").src = "../projeto-glass-html5/_imagens/" + tipo + ".jpg";	<!-- Mudar o documento pelo id ("luz") para a imagem com nome do tipo da função --> 
+				if (tipo == 'lampada-quebrada') {	<!-- Se tipo for igual a 'lampada-quebrada' fazer o seguinte: -->
+					quebrada = true;				<!-- Quebrada on -->
+				}
+			}
+		}
+	</script>										<!-- Fim da área -->
+</head>
+<body>
+	<h1>Acenda a lâmpada</h1>
+	<img src="../projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmouseover="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/>			<!-- Insere uma imagem de uma lampada apagada, atribui-se o id "luz" a ela, e ao passar o mouse por cima (onmouseover)(OBS: aqui poderia ser utilizado o código onmousemove, entretanto, este não funciona no google chrome) executa a função mudaLampada(tipo == 'lampada-acesa'), ao tirar o mouse de cima (onmouseout) executa a função mudaLampada(tipo == 'lampada-apagada') e ao clicar na imagem (onclick) executa a função mudaLampada(tipo == 'lampada-quebrada') (note que o parâmetro está entre aspas simples devido a já existência de aspas duplas no código) -->
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Lâmpada 1</title>
+	<meta charset="UTF-8"/>
+	<script>										<!-- Cria uma área para comandos de javascript -->
+		function acendeLampada() {					<!-- Função com nome "acendeLampada" que quando chamado, execuda os códigos entre {} -->
+			document.getElementById("luz").src = "../projeto-glass-html5/_imagens/lampada-acesa.jpg";	<!-- Muda a imagem para a de uma lâmpada acesa -->
+		}
+		function apagaLampada() {					<!-- Função com nome "apagaLampada" que quando chamado, execuda os códigos entre {} -->
+			document.getElementById("luz").src = "../projeto-glass-html5/_imagens/lampada-apagada.jpg"; <!-- Muda a imagem para a de uma lâmpada apagada -->
+		}
+		function quebraLampada() {					<!-- Função com nome "quebraLampada" que quando chamado, execuda os códigos entre {} -->
+			document.getElementById("luz").src = "../projeto-glass-html5/_imagens/lampada-quebrada.jpg"; <!-- Muda a imagem para a de uma lâmpada quebrada -->
+		}
+	</script>										<!-- Fim da área -->
+</head>
+<body>
+	<h1>Acenda a lâmpada</h1>
+	<img src="../projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmouseover="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()"/>			<!-- Insere uma imagem de uma lampada apagada, atribui-se o id "luz" a ela, e ao passar o mouse por cima (onmouseover)(OBS: aqui poderia ser utilizado o código onmousemove, entretanto, este não funciona no google chrome) executa a função acendeLampada(), ao tirar o mouse de cima (onmouseout) executa a função apagaLampada() e ao clicar na imagem (onclick) executa a função quebraLampada() -->
+</body>
+</html>

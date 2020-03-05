@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Lâmpada 2</title>
+	<meta charset="UTF-8"/>
+	<script>										<!-- Cria uma área para comandos de javascript -->
+	var quebrada = false							<!-- Quebrada off -->
+		function mudaLampada(tipo) {				<!-- Função com nome "mudaLampada" que quando chamado, execuda os códigos entre {} -->
+			if (tipo == 1) {						<!-- Se o tipo da função mudaLampada for 1, fazer o seguinte: -->
+				arquivo = "../projeto-glass-html5/_imagens/lampada-acesa.jpg";			<!-- Muda a imagem para a de uma lâmpada acesa -->
+			}
+			if (tipo == 2) {						<!-- Se o tipo da função mudaLampada for 2, fazer o seguinte: -->
+				arquivo = "../projeto-glass-html5/_imagens/lampada-apagada.jpg";		<!-- Muda a imagem para a de uma lâmpada apagada -->
+			}
+			if (tipo == 3) {						<!-- Se o tipo da função mudaLampada for 3, fazer o seguinte: -->
+				arquivo = "../projeto-glass-html5/_imagens/lampada-quebrada.jpg";		<!-- Muda a imagem para a de uma lâmpada quebrada -->
+			}
+			if (!quebrada)  {										<!-- Se quebrada estiver off fazer o seguinte: -->
+				document.getElementById("luz").src = arquivo;		<!-- Buscar elemento pelo id ("luz"), é igual a arquivo -->	
+				if (tipo == 3) {									<!-- Se o tipo da função for 3 fazer o seguinte: -->
+					quebrada = true;								<!-- Quebrada on -->
+				}
+			}
+		}
+	</script>										<!-- Fim da área -->
+</head>
+<body>
+	<h1>Acenda a lâmpada</h1>
+	<img src="../projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmouseover="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)"/>			<!-- Insere uma imagem de uma lampada apagada, atribui-se o id "luz" a ela, e ao passar o mouse por cima (onmouseover)(OBS: aqui poderia ser utilizado o código onmousemove, entretanto, este não funciona no google chrome) executa a função mudaLampada(tipo == 1), ao tirar o mouse de cima (onmouseout) executa a função mudaLampada(tipo == 2) e ao clicar na imagem (onclick) executa a função mudaLampada(tipo == 3) -->
+</body>
+</html>
